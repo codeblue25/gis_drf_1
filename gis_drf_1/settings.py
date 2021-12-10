@@ -69,8 +69,8 @@ ROOT_URLCONF = 'gis_drf_1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,  # APP_DIRS 안에 있는 파일들을 실행 시키겠다는 뜻
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
