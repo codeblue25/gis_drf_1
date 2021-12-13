@@ -18,7 +18,7 @@
                 SignUp
             </a>
             {% else %}
-            <a href="#">
+            <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>
             {% endif %}
