@@ -10,9 +10,18 @@
         <span>nav4</span>
 
         <span>
+            {% if not user.is_authenticated %}
+            <a href="{% url 'accountapp:login' %}">
+                Login
+            </a>
             <a href="{% url 'accountapp:create' %}">
                 SignUp
             </a>
+            {% else %}
+            <a href="#">
+                Logout
+            </a>
+            {% endif %}
         </span>
     </div>
 
