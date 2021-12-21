@@ -17,7 +17,19 @@
 
             <h1>{{ target_user.profile.nickname }}</h1>
             <h4>{{ target_user.profile.message }}</h4>
+
         </div>
+        <!-- 만약 페이지가 본인 페이지라면 개인정보 수정 및 프로필 수정 페이지 시각화 -->
+        {% if user == target_user %}
+        <div class="my-5">
+            <div>
+                <a href="{% url 'accountapp:update' pk=target_user.pk %}">Update account</a>
+            </div>
+            <div>
+                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">Update profile</a>
+            </div>
+        </div>
+        {% endif %}
 
         <!-- 본인이 작성한 게시글 리스트 들어가는 부분 -->
         <div></div>
