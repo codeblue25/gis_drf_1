@@ -7,10 +7,10 @@
   <div class="my-5" style="max-width: 600px; margin: auto">
 
     <div class="my-5">
-      <h2>Create Article</h2>
+      <h2>Update Article</h2>
     </div>
 
-    <form action="{% url 'articleapp:create' %}" method="post"
+    <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="post"
           enctype="multipart/form-data">
       {% csrf_token %}
       {% bootstrap_form form %}
